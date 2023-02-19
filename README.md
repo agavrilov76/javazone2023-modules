@@ -85,4 +85,9 @@ modular application? Join me on my talk if you want to know!
     > du -sh target/app
 
     > target/app/bin/java -m org.example.application
-     
+
+# TODOs
+
+- Research modules support in popular tools and frameworks such as Gradle, Spring Boot, Wildfly,
+  etc
+- Consider mentioning `moditest`: https://github.com/moditect/moditect
