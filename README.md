@@ -4,21 +4,20 @@
 
 # Abstract
 
-Java Modules is one of the most prominent Java platform features. It was introduced in Java 9 and
-since have slowly been adopted by Java developers. Modularity gives better control over third-party
-dependencies, clean and logical code structure and ability to create custom application specific
-Java runtime(s).
+Java Modules is one of the most prominent Java platform features introduced in Java 9.
+Even though it has slowly been adopted by Java developers, it gives a number of good benefits.
+For example, better control over third-party dependencies, clean and logical code structure and
+ability to create custom application-specific Java runtime(s).
 
 In this talk I want to share my experience in building and running modular applications.
 
-Starting with Java Modules is as simple as adding a module-info.java file to the source path.
-Module is an aggregation above java packages with a unique name. The modern IDEs and build tools
-like Maven will automatically recognize it and help out to get started. Only classes from the
-required modules will be visible for the application at compile time. Only specific modules can
-access the application classes via reflection at runtime time.
+Starting with Java Modules is as simple as adding a module-info.java file to the source path. The
+modern IDEs and build tools will automatically recognize it and help out to get started. Only
+classes from the required modules will be visible for the application at compile time. Only specific
+modules can access the application classes via reflection at runtime time.
 
 What is the difference between class-path and module-path? Do you need to declare module info for
-tests? How does resource loading work across different modules? How to package and containerize the
+tests? How does resource loading work across different modules? How to package and containerize a
 modular application? Join me on my talk if you want to know!
 
 # Touch points
@@ -30,6 +29,8 @@ modular application? Join me on my talk if you want to know!
     - Scalable modular Java platform
     - Improved performance
     - Backwards compatibility
+- What is a module?
+    - An aggregation above java packages with a unique name
 - Consider a sample Java project consisted of an application and a library. The app can read
   text resource files and parse JSON
 - Add a `module-info` to the library
@@ -46,7 +47,7 @@ modular application? Join me on my talk if you want to know!
 - Create an executable distribution using `jlink`
 - Create a Docker container and run it
 - Be aware of:
-    - Use latest version of tooling
+    - Use the latest version of tooling
     - Encapsulation rules are difficult
     - Unit and integration test coverage is important
     - Auto-modules don't work `jlink`
