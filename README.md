@@ -4,10 +4,10 @@
 
 # Abstract
 
-Java Modules is one of the most prominent Java platform features introduced in Java 9.
-Even though it has slowly been adopted by Java developers, it gives a number of good benefits.
-For example, better control over third-party dependencies, clean and logical code structure and
-ability to create custom application-specific Java runtime(s).
+Java Modules is one of the most prominent Java platform features introduced in Java 9. It provides a
+number of good benefits despite slow adoption by the Java developers. Using modules gives a better
+control over third-party dependencies, clean and logical code structure and ability to create custom
+application-specific Java runtime(s).
 
 In this talk I want to share my experience in building and running modular applications.
 
@@ -29,13 +29,10 @@ modular application? Join me on my talk if you want to know!
     - Scalable modular Java platform
     - Improved performance
     - Backwards compatibility
-- What is a module?
-    - An aggregation above java packages with a unique name
 - Consider a sample Java project consisted of an application and a library. The app can read
   text resource files and parse JSON
-- Add a `module-info` to the library
-- Add a `module-info` to the application set the module name, add the `requires` and `exports`
-  sections
+- Add a `module-info` to the library, then to the application, set the module name, add
+  the `requires` and `exports` sections
 - Discuss readability and visibility
 - Fix the package split issue in the library code
 - Open reflection module access to Jackson
@@ -46,7 +43,7 @@ modular application? Join me on my talk if you want to know!
 - Build a bundle with the maven assembly plugin, show how to run the app using the `module-path`
 - Create an executable distribution using `jlink`
 - Create a Docker container and run it
-- Be aware of:
+- Some things to be aware of:
     - Use the latest version of tooling
     - Encapsulation rules are difficult
     - Unit and integration test coverage is important
@@ -56,11 +53,14 @@ modular application? Join me on my talk if you want to know!
 # Talk structure
 
 - Start the talk with a few slides covering two first points above
-- Switch to demo code using the IntelliJ IDEA community edition
-- Use the code from the `plain` directory gradually transforming it into a modular application
+- Switch to demo mode using the IntelliJ IDEA community edition and a terminal
+- Edit the code from the `parent` directory, gradually transforming it into a modular application
   following the points above (the result is in `modules` directory)
-- Demo `jlink`
-- Demo docker containers
+- Run application and tests from the IDE
+- Build project with Maven
+- Run application from the command line
+- Run `jlink` to create a custom runtime
+- Build and run a docker container
 - Go back to the final summary slide
 - Q/A
 
@@ -76,9 +76,13 @@ modular application? Join me on my talk if you want to know!
 # Toolbox
 
     > java -p application/target/application-1.0-SNAPSHOT-dir --list-modules
+
     > java -p application/target/application-1.0-SNAPSHOT-dir -m org.example.application
+
     > jlink --module-path application/target/application-1.0-SNAPSHOT-dir \
     --add-modules org.example.application --output target/app
+
     > du -sh target/app
+
     > target/app/bin/java -m org.example.application
      
