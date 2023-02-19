@@ -3,10 +3,10 @@ package org.example;
 import java.io.IOException;
 import org.junit.jupiter.api.Test;
 
-class JsonParserTest {
+class MainTest {
 
   @Test
   void main() throws IOException {
-    JsonParser.main(null);
+    Main.main(null);
   }
 }
