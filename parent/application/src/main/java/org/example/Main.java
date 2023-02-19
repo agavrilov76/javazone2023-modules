@@ -15,14 +15,15 @@ public class Main {
     System.out.println(InternalStringUtils.reverse("LoL_"));
 
     System.out.printf("%n>>>%n%n");
-    loadResource("data/resource1.txt");
-    loadResource("data/resource2.txt");
+    System.out.printf(
+        "----------%n%s:%n%n%s%n", "resource1.txt", loadResource("data/resource1.txt"));
+    System.out.printf(
+        "----------%n%s:%n%n%s%n", "resource2.txt", loadResource("data/resource2.txt"));
 
-    System.out.printf("%n>>>%n%n");
-    parseJson();
+    System.out.printf("%n>>>%n%s%n%n", parseJson());
   }
 
-  static void loadResource(final String name) throws IOException {
+  static String loadResource(final String name) throws IOException {
     final var classLoader = Thread.currentThread().getContextClassLoader();
 
     final var resource =
@@ -30,16 +31,14 @@ public class Main {
             classLoader.getResource(name), "Resource %s is not found".formatted(name));
 
     try (final var input = resource.openStream()) {
-      final var content = new String(input.readAllBytes(), StandardCharsets.UTF_8);
-      System.out.printf("----------%n%s:%n%n%s%n", name, content);
+      return new String(input.readAllBytes(), StandardCharsets.UTF_8);
     }
   }
 
-  static void parseJson() throws IOException {
+  static String parseJson() throws IOException {
     record Foo(String textField) {}
     final var foo = new Foo("Lorem ipsum dolor sit amet");
     final var objectMapper = new ObjectMapper().findAndRegisterModules();
-    final var json = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(foo);
-    System.out.println(json);
+    return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(foo);
   }
 }

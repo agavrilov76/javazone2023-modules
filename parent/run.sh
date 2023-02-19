@@ -1,1 +1,1 @@
-java -cp application/target/plain-application-1.0-SNAPSHOT-dir/\* org.example.Main
+java -cp application/target/application-1.0-SNAPSHOT-dir/\* org.example.Main

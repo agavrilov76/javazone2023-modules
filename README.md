@@ -30,7 +30,7 @@ modular application? Join me on my talk if you want to know!
     - Scalable modular Java platform
     - Improved performance
 - Consider a sample Java project consisted of an application and a library. The app can read
-  resources and parse JSON
+  text resource files and parse JSON
 - Add a `module-info` file: set the module name, add the `requires` and `exports` sections
 - Discuss readability and visibility
 - Fix the package split issue in the library code
@@ -49,8 +49,8 @@ modular application? Join me on my talk if you want to know!
 
 - Start the talk with a few slides covering two first points above
 - Switch to demo code using the IntelliJ IDEA community edition
-- Start with code this repository in the `main` branch, gradually transforming it into the code from
-  the `modules` branch following the points above
+- Use the code from the `plain` directory gradually transforming it into a modular application
+  following the points above (the result is in `modules` directory)
 - Demo `jlink`
 - Demo docker containers
 - Go back to the final summary slide
@@ -58,8 +58,9 @@ modular application? Join me on my talk if you want to know!
 
 # Links
 
-- JPMS specifications: https://openjdk.org/projects/jigsaw/spec/
-- Understanding Java
-  Modules: https://www.oracle.com/corporate/features/understanding-java-9-modules.html
-- Loading classes and
-  resources: https://stackoverflow.com/questions/45166757/loading-classes-and-resources-in-java-9
+- JPMS specifications 
+  - https://openjdk.org/projects/jigsaw/spec/
+- Understanding Java Modules 
+  - https://www.oracle.com/corporate/features/understanding-java-9-modules.html
+- Loading classes and resources
+  - https://stackoverflow.com/questions/45166757/loading-classes-and-resources-in-java-9
