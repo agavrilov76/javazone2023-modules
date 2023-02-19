@@ -41,7 +41,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>com.telenordigital.payment.dob.server.DobServer</mainClass>
+              <mainClass>org.example.Main</mainClass>
             </manifest>
           </archive>
         </configuration>

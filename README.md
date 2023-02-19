@@ -29,9 +29,12 @@ modular application? Join me on my talk if you want to know!
     - Strong encapsulation for the Java platform and applications
     - Scalable modular Java platform
     - Improved performance
+    - Backwards compatibility
 - Consider a sample Java project consisted of an application and a library. The app can read
   text resource files and parse JSON
-- Add a `module-info` file: set the module name, add the `requires` and `exports` sections
+- Add a `module-info` to the library
+- Add a `module-info` to the application set the module name, add the `requires` and `exports`
+  sections
 - Discuss readability and visibility
 - Fix the package split issue in the library code
 - Open reflection module access to Jackson
@@ -42,7 +45,11 @@ modular application? Join me on my talk if you want to know!
 - Build a bundle with the maven assembly plugin, show how to run the app using the `module-path`
 - Create an executable distribution using `jlink`
 - Create a Docker container and run it
-- Summary of the code parts and the pain points
+- Be aware of:
+    - Use latest version of tooling
+    - Encapsulation rules are difficult
+    - Unit and integration test coverage is important
+    - Auto-modules don't work `jlink`
 - Q/A
 
 # Talk structure
@@ -58,9 +65,19 @@ modular application? Join me on my talk if you want to know!
 
 # Links
 
-- JPMS specifications 
-  - https://openjdk.org/projects/jigsaw/spec/
-- Understanding Java Modules 
-  - https://www.oracle.com/corporate/features/understanding-java-9-modules.html
+- JPMS specifications
+    - https://openjdk.org/projects/jigsaw/spec/
+- Understanding Java Modules
+    - https://www.oracle.com/corporate/features/understanding-java-9-modules.html
 - Loading classes and resources
-  - https://stackoverflow.com/questions/45166757/loading-classes-and-resources-in-java-9
+    - https://stackoverflow.com/questions/45166757/loading-classes-and-resources-in-java-9
+
+# Toolbox
+
+    > java -p application/target/application-1.0-SNAPSHOT-dir --list-modules
+    > java -p application/target/application-1.0-SNAPSHOT-dir -m org.example.application
+    > jlink --module-path application/target/application-1.0-SNAPSHOT-dir \
+    --add-modules org.example.application --output target/app
+    > du -sh target/app
+    > target/app/bin/java -m org.example.application
+     
