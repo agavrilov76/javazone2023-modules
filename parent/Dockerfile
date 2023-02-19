@@ -1,0 +1,6 @@
+FROM eclipse-temurin:18.0.2_9-jdk-alpine
+
+RUN mkdir /example
+COPY application/target/plain-application-1.0-SNAPSHOT-dir/* /example/
+
+ENTRYPOINT java -cp /example/\* org.example.Main
