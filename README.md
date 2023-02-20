@@ -9,7 +9,7 @@ number of good benefits despite slow adoption by the Java developers. Using modu
 control over third-party dependencies, clean and logical code structure and ability to create custom
 application-specific Java runtime(s).
 
-In this talk I want to share my experience in building and running modular applications.
+In this talk I will show by example how to build and run a modular java application.
 
 Starting with Java Modules is as simple as adding a module-info.java file to the source path. The
 modern IDEs and build tools will automatically recognize it and help out to get started. Only
