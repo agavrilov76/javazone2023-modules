@@ -1,19 +1,19 @@
 # Practical experience of using Java Modules
 
-20 min
+45 min
 
 # Abstract
 
 Java Modules is one of the most prominent Java platform features introduced in Java 9. It provides a
 number of good benefits despite slow adoption by the Java developers. Using modules gives a better
 control over third-party dependencies, clean and logical code structure and ability to create custom
-application-specific Java runtime(s).
+application-specific Java runtime images.
 
 In this talk I will show by example how to build and run a modular java application.
 
 Starting with Java Modules is as simple as adding a module-info.java file to the source path. The
-modern IDEs and build tools will automatically recognize it and help out to get started. Only
-classes from the required modules will be visible for the application at compile time. Only specific
+modern IDEs and build tools automatically recognize it and help out to get started. Only
+classes from the required modules are visible for the application at compile time. Only specific
 modules can access the application classes via reflection at runtime time.
 
 What is the difference between class-path and module-path? Do you need to declare module info for
@@ -48,7 +48,7 @@ modular application? Join me on my talk if you want to know!
     - Encapsulation rules are difficult
     - Unit and integration test coverage is important
     - Auto-modules don't work `jlink`
-- Q/A
+- Q/A (5 min)
 
 # Talk structure
 
@@ -91,3 +91,18 @@ modular application? Join me on my talk if you want to know!
 - Research modules support in popular tools and frameworks such as Gradle, Spring Boot, Wildfly,
   etc
 - Consider mentioning `moditest`: https://github.com/moditect/moditect
+
+# About me
+
+I'm a Java enthusiast with over 20 years of experience in software development. Currently working as
+a staff engineer at Telenor Linx on direct operator billing and messaging backend solutions.
+Previously worked at Sun Microsystems / Oracle on the Java Development Kit.
+
+LinkedIn:
+https://www.linkedin.com/in/alexey-gavrilov-62222b2
+
+Github:
+https://github.com/agavrilov76
+
+Stackoverflow:
+https://stackoverflow.com/users/3537858/alexey-gavrilov
